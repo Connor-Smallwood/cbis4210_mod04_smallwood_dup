@@ -16,22 +16,19 @@
     </form>
 
     <div class="row mt-4">
-        <!-- Simulated author data -->
-        <div class="col-md-3">
+        {% for author in authors %}
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">John Doe</h5>
-                    <p class="card-text">Author of many bestsellers, known for his thrilling novels.</p>
+                    <h5 class="card-title">{{ author.first_name }} {{ author.last_name }}</h5>
+                    {% if author.description %}
+                    <p class="card-text">{{ author.description }}</p>
+                    {% else %}
+                    <p class="card-text">No description available for this author.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Jane Smith</h5>
-                    <p class="card-text">Famous fiction author with a unique writing style.</p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}

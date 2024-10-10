@@ -3,58 +3,42 @@ from .models import Book, Author
 
 main = Blueprint('main', __name__)
 
-
 @main.route('/')
 def index():
     return render_template('index.html')
 
-
 @main.route('/books')
 def books():
-    # Simulate filters (You can replace this with actual dynamic filters using the database)
+    # Fetch all books from the database
     genre = request.args.get('genre')
     price = request.args.get('price')
-    age = request.args.get('age')
+    age_group = request.args.get('age_group')
 
-    # Simulated book data (later you will replace this with actual database queries)
-    books = [
-        {"title": "Book One", "description": "A great read.", "price": 9.99, "image": "#"},
-        {"title": "Book Two", "description": "Another great book.", "price": 12.99, "image": "#"},
-    ]
+    # You can add filter logic here if required (e.g., filter by genre, price, etc.)
+    all_books = Book.query.all()
 
-    return render_template('books.html', books=books)
-
+    return render_template('books.html', books=all_books)
 
 @main.route('/electronics')
 def electronics():
-    # Simulated electronics data
+    # Simulated electronics data (you will replace this with your own logic)
     electronics = [
-        {"name": "Headphones", "description": "Noise-canceling.", "price": 99.99, "image": "#"},
-        {"name": "Laptop", "description": "Great for work.", "price": 599.99, "image": "#"},
+        {"name": "Headphones", "description": "Noise-canceling headphones.", "price": 99.99, "image": "#"},
+        {"name": "Laptop", "description": "High-performance laptop.", "price": 599.99, "image": "#"},
     ]
 
     return render_template('electronics.html', electronics=electronics)
 
-
 @main.route('/authors')
 def authors():
-    # Simulated filters for authors
-    first_name = request.args.get('first_name')
-    last_name = request.args.get('last_name')
+    # Fetch all authors from the database
+    all_authors = Author.query.all()
 
-    # Simulated author data (later you will replace this with actual database queries)
-    authors = [
-        {"first_name": "John", "last_name": "Doe", "description": "Author of many bestsellers."},
-        {"first_name": "Jane", "last_name": "Smith", "description": "A famous fiction author."},
-    ]
-
-    return render_template('authors.html', authors=authors)
-
+    return render_template('authors.html', authors=all_authors)
 
 @main.route('/about')
 def about():
     return render_template('about.html')
-
 
 @main.route('/help')
 def help_page():

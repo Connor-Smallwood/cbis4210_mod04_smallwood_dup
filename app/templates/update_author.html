@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Update Author</h2>
+    <form method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" value="{{ author.first_name }}" required>
+        <br>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" value="{{ author.last_name }}" required>
+        <br>
+        <label for="description">Description:</label>
+        <textarea name="description">{{ author.description }}</textarea>
+        <br>
+        <input type="submit" value="Update Author">
+    </form>
+{% endblock %}

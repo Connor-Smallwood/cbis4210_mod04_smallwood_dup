@@ -17,29 +17,35 @@
                 <input type="text" id="price" name="price" class="form-control" placeholder="Enter price range">
             </div>
             <div class="col-md-4">
-                <label for="age">Age Group:</label>
-                <select id="age" name="age" class="form-control">
+                <label for="age_group">Age Group:</label>
+                <select id="age_group" name="age_group" class="form-control">
                     <option value="">All</option>
-                    <option value="children">Children</option>
-                    <option value="young_adult">Young Adult</option>
-                    <option value="adult">Adult</option>
+                    <option value="0-2">0-2</option>
+                    <option value="3-5">3-5</option>
+                    <option value="6-8">6-8</option>
+                    <option value="9-12">9-12</option>
+                    <option value="teens">Teens</option>
+                    <option value="adults">Adults</option>
                 </select>
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Filter</button>
     </form>
+
     <div class="row mt-4">
-        <!-- Simulated Book Data -->
-        <div class="col-md-3">
+        {% for book in books %}
+        <div class="col-md-4">
             <div class="card">
-                <img class="card-img-top" src="#" alt="Book Image">
+                <img class="card-img-top" src="{{ book.image or '#' }}" alt="Book Image">
                 <div class="card-body">
-                    <h5 class="card-title">Book Title</h5>
-                    <p class="card-text">Book description goes here.</p>
-                    <p class="text-muted">$9.99</p>
+                    <h5 class="card-title">{{ book.title }}</h5>
+                    <p class="card-text">{{ book.description }}</p>
+                    <p><strong>Genre:</strong> {{ book.genre }}</p>
+                    <p><strong>Price:</strong> ${{ book.price }}</p>
+                    <p><strong>Age Group:</strong> {{ book.age_group }}</p>
                 </div>
             </div>
         </div>
-        <!-- More book listings can be added here -->
+        {% endfor %}
     </div>
 {% endblock %}
