@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Authors</h2>
+    <form method="GET" action="/authors">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" class="form-control" placeholder="Enter first name">
+            </div>
+            <div class="col-md-6">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" class="form-control" placeholder="Enter last name">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+
+    <div class="row mt-4">
+        <!-- Simulated author data -->
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">John Doe</h5>
+                    <p class="card-text">Author of many bestsellers, known for his thrilling novels.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Jane Smith</h5>
+                    <p class="card-text">Famous fiction author with a unique writing style.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

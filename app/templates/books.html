@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Books</h2>
+    <form method="GET" action="/books">
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre" class="form-control">
+                    <option value="">All</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="nonfiction">Non-Fiction</option>
+                    <!-- Add more genres as needed -->
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="price">Price:</label>
+                <input type="text" id="price" name="price" class="form-control" placeholder="Enter price range">
+            </div>
+            <div class="col-md-4">
+                <label for="age">Age Group:</label>
+                <select id="age" name="age" class="form-control">
+                    <option value="">All</option>
+                    <option value="children">Children</option>
+                    <option value="young_adult">Young Adult</option>
+                    <option value="adult">Adult</option>
+                </select>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+    <div class="row mt-4">
+        <!-- Simulated Book Data -->
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="#" alt="Book Image">
+                <div class="card-body">
+                    <h5 class="card-title">Book Title</h5>
+                    <p class="card-text">Book description goes here.</p>
+                    <p class="text-muted">$9.99</p>
+                </div>
+            </div>
+        </div>
+        <!-- More book listings can be added here -->
+    </div>
+{% endblock %}

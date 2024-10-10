@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1>Welcome to Our Bookstore</h1>
+        <p>Discover a wide variety of books, electronics, and more!</p>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Books</h2>
+            <p>Explore our collection of books across various genres.</p>
+            <a class="btn btn-primary" href="/books">Shop Books</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Electronics</h2>
+            <p>Find the latest gadgets and accessories for your tech needs.</p>
+            <a class="btn btn-primary" href="/electronics">Shop Electronics</a>
+        </div>
+        <div class="col-md-4">
+            <h2>Authors</h2>
+            <p>Meet the authors behind the books you love.</p>
+            <a class="btn btn-primary" href="/authors">View Authors</a>
+        </div>
+    </div>
+{% endblock %}
