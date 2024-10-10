@@ -1,24 +1,40 @@
 {% extends "base.html" %}
+
 {% block content %}
-    <div class="jumbotron text-center">
-        <h1>Welcome to Our Bookstore</h1>
-        <p>Discover a wide variety of books, electronics, and more!</p>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
+<div class="container mt-4">
+
+    <!-- Books Section -->
+    <div class="row mb-4">
+        <div class="col-md-9">
             <h2>Books</h2>
-            <p>Explore our collection of books across various genres.</p>
-            <a class="btn btn-primary" href="/books">Shop Books</a>
+            <p>Explore our diverse range of books from various genres. Find the perfect book to immerse yourself in a new adventure or learn something new.</p>
         </div>
-        <div class="col-md-4">
-            <h2>Electronics</h2>
-            <p>Find the latest gadgets and accessories for your tech needs.</p>
-            <a class="btn btn-primary" href="/electronics">Shop Electronics</a>
-        </div>
-        <div class="col-md-4">
-            <h2>Authors</h2>
-            <p>Meet the authors behind the books you love.</p>
-            <a class="btn btn-primary" href="/authors">View Authors</a>
+        <div class="col-md-3 text-end">
+            <a href="{{ url_for('main.books') }}" class="btn btn-primary mt-2">View All Books</a>
         </div>
     </div>
+
+    <!-- Authors Section -->
+    <div class="row mb-4">
+        <div class="col-md-9">
+            <h2>Authors</h2>
+            <p>Meet the brilliant minds behind your favorite books. Discover new authors and learn more about the ones you love.</p>
+        </div>
+        <div class="col-md-3 text-end">
+            <a href="{{ url_for('main.authors') }}" class="btn btn-primary mt-2">View All Authors</a>
+        </div>
+    </div>
+
+    <!-- Electronics Section -->
+    <div class="row mb-4">
+        <div class="col-md-9">
+            <h2>Electronics</h2>
+            <p>Browse our selection of the latest electronics. From gadgets to accessories, find everything you need to stay up-to-date with the latest technology.</p>
+        </div>
+        <div class="col-md-3 text-end">
+            <a href="{{ url_for('main.electronics') }}" class="btn btn-primary mt-2">View All Electronics</a>
+        </div>
+    </div>
+
+</div>
 {% endblock %}

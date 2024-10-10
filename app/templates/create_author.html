@@ -1,16 +1,26 @@
 {% extends "base.html" %}
+
 {% block content %}
+<div class="container mt-4">
     <h2>Create New Author</h2>
     <form method="POST">
-        <label for="first_name">First Name:</label>
-        <input type="text" name="first_name" required>
-        <br>
-        <label for="last_name">Last Name:</label>
-        <input type="text" name="last_name" required>
-        <br>
-        <label for="description">Description:</label>
-        <textarea name="description"></textarea>
-        <br>
-        <input type="submit" value="Create Author">
+        <div class="mb-3">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="description">Description</label>
+            <textarea name="description" class="form-control"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="image">Image URL</label>
+            <input type="text" name="image" class="form-control" placeholder="Enter image URL or static path">
+        </div>
+        <button type="submit" class="btn btn-primary">Create Author</button>
     </form>
+</div>
 {% endblock %}
