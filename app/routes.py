@@ -118,7 +118,6 @@ def update_author(id):
         author.first_name = request.form['first_name']
         author.last_name = request.form['last_name']
         author.description = request.form['description']
-        author.image = request.form['image']  # Update the image URL or path
 
         db.session.commit()
         return redirect(url_for('main.authors'))

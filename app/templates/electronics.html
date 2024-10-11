@@ -2,10 +2,10 @@
 {% block content %}
     <h2>Electronics</h2>
     <div class="row">
-        <!-- Simulated electronics data -->
+        <!-- Headphones -->
         <div class="col-md-3">
             <div class="card">
-                <img class="card-img-top" src="#" alt="Headphones Image">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/electronics/headphones.jpg') }}" alt="Headphones Image">
                 <div class="card-body">
                     <h5 class="card-title">Headphones</h5>
                     <p class="card-text">Noise-canceling headphones for an immersive sound experience.</p>
@@ -13,13 +13,27 @@
                 </div>
             </div>
         </div>
+
+        <!-- Laptop -->
         <div class="col-md-3">
             <div class="card">
-                <img class="card-img-top" src="#" alt="Laptop Image">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/electronics/laptop.jpg') }}" alt="Laptop Image">
                 <div class="card-body">
                     <h5 class="card-title">Laptop</h5>
                     <p class="card-text">High-performance laptop perfect for work and entertainment.</p>
                     <p class="text-muted">$599.99</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kindle Paperwhite -->
+        <div class="col-md-3">
+            <div class="card">
+                <img class="card-img-top" src="{{ url_for('static', filename='images/electronics/kindle.jpg') }}" alt="Kindle Image">
+                <div class="card-body">
+                    <h5 class="card-title">Kindle Paperwhite</h5>
+                    <p class="card-text">A high-resolution 300 ppi display with adjustable light for reading in any condition.</p>
+                    <p class="text-muted">$129.99</p>
                 </div>
             </div>
         </div>
