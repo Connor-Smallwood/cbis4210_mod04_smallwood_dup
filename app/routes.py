@@ -98,15 +98,18 @@ def create_author():
         first_name = request.form['first_name']
         last_name = request.form['last_name']
         description = request.form['description']
-        image = request.form['image']  # Handle the image URL or path
 
-        # Save the new author to the database (assuming you have an Author model)
-        new_author = Author(first_name=first_name, last_name=last_name, description=description, image=image)
+        # Create a new author object without an image field
+        new_author = Author(first_name=first_name, last_name=last_name, description=description)
+
+        # Add the new author to the database
         db.session.add(new_author)
         db.session.commit()
 
-        return redirect(url_for('main.authors'))
+        # Redirect to the authors list or another page after successful creation
+        return redirect(url_for('main.authors'))  # Assuming 'main.authors' is your authors list page
 
+    # Render the 'create_author.html' template for GET request
     return render_template('create_author.html')
 
 
